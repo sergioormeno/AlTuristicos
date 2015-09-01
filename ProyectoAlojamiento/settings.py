@@ -59,7 +59,7 @@ WSGI_APPLICATION = 'ProyectoAlojamiento.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'Alojamiento.db',
+        'NAME': 'Alojamientos.db',
     }
 }
 
