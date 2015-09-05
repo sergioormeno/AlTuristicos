@@ -11,6 +11,8 @@ class Comuna(models.Model):
     class Meta:
         managed = False
         db_table = 'comuna'
+    def __unicode__(self):
+        return self.nombre
 
 class Establecimiento(models.Model):
     id = models.IntegerField(primary_key=True, blank=True)  # AutoFie
@@ -34,7 +36,8 @@ class Establecimiento(models.Model):
     class Meta:
         managed = False
         db_table = 'establecimiento'
-
+    def __unicode__(self):
+        return self.nombre
 
 class Provincia(models.Model):
     id = models.IntegerField(primary_key=True, blank=True)  # AutoFie
@@ -46,7 +49,8 @@ class Provincia(models.Model):
     class Meta:
         managed = False
         db_table = 'provincia'
-
+    def __unicode__(self):
+        return self.nombre
 
 class Region(models.Model):
     id = models.IntegerField(primary_key=True, blank=True)  # AutoFie
@@ -57,3 +61,17 @@ class Region(models.Model):
     class Meta:
         managed = False
         db_table = 'region'
+    def __unicode__(self):
+        return self.nombre
+
+class SignUp (models.Model):
+    full_name = models.CharField(max_length=120, blank=True, null=True)
+
+    email = models.EmailField()
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __unicode__(self):
+        return self.email
