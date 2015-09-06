@@ -1,0 +1,12 @@
+{% extends "regiones.html" %}
+{% block content %}
+{% if queryset %}
+<p><h2>Comunas/<a href="{% url 'apiat.views.Provincias' %}">Provincias</a>/<a href="{% url 'apiat.views.Regiones' %}">Regiones</a></h2></p>
+<p class="dropdown-header">Selecciona la comuna</p>
+<table class='table'>
+{% for instance in queryset %}
+  <tr><td><a href="{% url 'apiat.views.Comunas' %}{{ forloop.counter }}">{{ instance.nombre }}</a> </td></tr>
+{% endfor %}
+</table>
+{% endif %}
+{% endblock %}

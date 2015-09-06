@@ -17,11 +17,21 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from apiat import views
+from django.http import HttpResponse
 
 
 urlpatterns = [
     url(r'^$', 'apiat.views.index', name='index'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^acerca/', 'apiat.views.Acerca', name='Acerca'),
+    url(r'^regiones/$', 'apiat.views.Regiones', name='Regiones'),
+    url(r'^regiones/(?P<reg_id2>\d{1,2})/$', 'apiat.views.sortr', name='Sort_Regiones'),
+    url(r'^provincias/$', 'apiat.views.Provincias', name='Provincias'),
+    url(r'^provincias/(?P<prov_id2>\d{1,2})/$', 'apiat.views.sortp', name='Provincias'),
+    url(r'^comunas/$', 'apiat.views.Comunas', name='Comunas'),
+    url(r'^comunas/(?P<com_id2>\d{1,3})/$', 'apiat.views.sortc', name='Comunas'),
+    url(r'^contact/$', 'apiat.views.contact', name='contact'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

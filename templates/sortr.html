@@ -1,0 +1,12 @@
+{% extends "regiones.html" %}
+{% block content %}
+{% if queryset %}
+<h2>Establecimientos</h2> <FORM><INPUT Type="button" VALUE="Volver" onClick="history.go(-1);return true;"></FORM>
+<p></p>
+<table class='table'>
+{% for instance in queryset %}
+  <tr><td>{{ forloop.counter }}</td><td>{{ instance.nombre }}</td><td>{{ instance.direccion }}</td><td>{{ instance.num_dir }}</td><td>{{ instance.telefono }}</td></tr>
+{% endfor %}
+</table>
+{% endif %}
+{% endblock %}
