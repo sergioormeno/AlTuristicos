@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Comuna(models.Model):
     id = models.IntegerField(primary_key=True, blank=True)  # AutoFie
 
@@ -75,3 +76,5 @@ class SignUp (models.Model):
 
     def __unicode__(self):
         return self.email
+
+

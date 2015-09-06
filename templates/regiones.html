@@ -40,11 +40,11 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="{% url 'apiat.views.index' %}">Inicio</a></li>
+              <li><a href="{% url 'apiat.views.index' %}">Inicio</a></li>
               <li><a href="{% url 'apiat.views.Acerca' %}">Acerca de</a></li>
               <li><a href="{% url 'apiat.views.contact' %}">Contacto</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Aplicación<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Aplicación<span class="caret" class="active"></span></a>
                 <ul class="dropdown-menu">
                   <li class="dropdown-header">Sortear por:</li>
                   <li><a href="{% url 'apiat.views.Regiones' %}">Regiones</a></li>
@@ -63,22 +63,17 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-       <div class="container">
-        <div class="row">
-          <div class='col-sm-6'>
-          <h1>AlTuristicos</h1>
-          <p>Chile es un país lleno de bellezas, por lo mismo existen varios alojamientos turisticos a lo largo de toda nuestra extension para toda la gente que viaja y desea conocer nuestro hermoso país, con AlTuristicos nunca te faltará donde hospedarte ya que pose todos los establecimientos existentes en el país y registrados en sernatur</p>
-          <p>
-          <a class="btn btn-lg btn-primary" href="{% url 'apiat.views.Regiones' %}" role="button">Explorar &raquo;</a>
-          </p>
-          </div>
-          <div class='col-sm-6' >
-            <iframe width="480" height="310" src="https://www.youtube.com/embed/RGq4wAj7Io8" frameborder="0" allowfullscreen></iframe>
+      {% block content %}
+        {% if queryset %}
+        <table class='table'>
+        {% for instance in queryset %}
+        {% endfor %}
+        </table>
 
-          </div>
-          </div>
-        </div>
-       </div>
+        
+        {% endif %}
+      {% endblock %}
+    </div>
 
     </div> <!-- /container -->
 
@@ -90,3 +85,4 @@
     <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
   </body>
 </html>
+

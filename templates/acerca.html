@@ -40,8 +40,8 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="{% url 'apiat.views.index' %}">Inicio</a></li>
-              <li><a href="{% url 'apiat.views.Acerca' %}">Acerca de</a></li>
+              <li><a href="{% url 'apiat.views.index' %}">Inicio</a></li>
+              <li class="active"><a href="{% url 'apiat.views.Acerca' %}">Acerca de</a></li>
               <li><a href="{% url 'apiat.views.contact' %}">Contacto</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Aplicación<span class="caret"></span></a>
@@ -60,22 +60,17 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-
+      {% block jumbotron %}
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
        <div class="container">
         <div class="row">
-          <div class='col-sm-6'>
-          <h1>AlTuristicos</h1>
-          <p>Chile es un país lleno de bellezas, por lo mismo existen varios alojamientos turisticos a lo largo de toda nuestra extension para toda la gente que viaja y desea conocer nuestro hermoso país, con AlTuristicos nunca te faltará donde hospedarte ya que pose todos los establecimientos existentes en el país y registrados en sernatur</p>
-          <p>
-          <a class="btn btn-lg btn-primary" href="{% url 'apiat.views.Regiones' %}" role="button">Explorar &raquo;</a>
-          </p>
-          </div>
-          <div class='col-sm-6' >
-            <iframe width="480" height="310" src="https://www.youtube.com/embed/RGq4wAj7Io8" frameborder="0" allowfullscreen></iframe>
-
-          </div>
+          <h2>Acerca de AlTuristicos
+          <p></p>  
+          <p>Esta aplicación nace como proyecto informático por Sergio Ormeño para el ramo de Taller integrado cursado por el profesor Miguel Guevara en la Universidad de Playa Ancha, partió a partir de la necesidad de información acerca de alojamientos turísticos que están esparcidos por todo Chile.</p>
+          <p>El proyecto ha sido desarrollado en Django y Bootstrap, su codigo fuente es de uso libre, este mismo se puede encontrar en <a href="https://github.com/sierz/AlTuristicos">GitHub</a></p>
+      {% endblock %}
+          
           </div>
         </div>
        </div>
